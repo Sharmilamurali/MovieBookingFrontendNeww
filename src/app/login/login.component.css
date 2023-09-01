@@ -1,0 +1,14 @@
+.loginForm{
+    width: 50%;
+}
+
+h1,h3{
+    font-family:Arial, Helvetica, sans-serif; 
+    padding-bottom: 20px;
+    color: rgb(13, 7, 51) !important;
+
+}
+.error{
+    color: red;
+}
+    

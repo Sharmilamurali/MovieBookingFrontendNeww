@@ -1,0 +1,36 @@
+<div class="container mt-3">
+  <div>
+    <mat-form-field appearance="outline" class="searchbar w-50">
+      <mat-label>Search for Movies</mat-label>
+      <input matInput type="text" name="search" id="search" #searchKey (keyup)="searchByKeyword(searchKey.value)"
+        placeholder="Search for Movies">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+  </div>
+  
+
+  <table mat-table [dataSource]="allMovies"  class="mat-elevation-z8">
+
+    <ng-container matColumnDef="movieName">
+      <th *matHeaderCellDef> Movie Name </th>
+      <td *matCellDef="let movie"> {{movie.movieId.movieName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="theatreName">
+      <th *matHeaderCellDef> Theator Name </th>
+      <td *matCellDef="let movie"> {{movie.movieId.theatreName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="costOfTicket">
+      <th *matHeaderCellDef> Cost </th>
+      <td *matCellDef="let movie"> {{movie.costOfTicket}} </td>
+    </ng-container>
+    <ng-container matColumnDef="ticketStatus">
+      <th *matHeaderCellDef> ticket Status </th>
+      <td *matCellDef="let movie"><button mat-raised-button color="primary" *ngIf="movie.ticketStatus=='Book ASAP'" (click)="bookTickets(movie)">{{movie.ticketStatus}}</button>
+        <button mat-stroked-button disabled *ngIf="movie.ticketStatus=='SOLD OUT'" color="warn">{{movie.ticketStatus}}</button> </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>

@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="card mt-4 text-center mx-auto">
+    <div class="mt-3 w-100">
+      <p>Movie Name:<b>{{movieName}}</b></p>
+      <p>Theatre Name: <b>{{theatreName}}</b></p>
+      <p>Cost of Movie: <b>₹{{movieCost}}</b></p>
+    </div>
+<p><b>Select tickets from below block</b></p>
+    <div class="mt-5 container seat-block w-75">
+      <p>Red Seat- <b>Booked</b></p>
+      <p>Green Seat- <b>Selected</b></p>
+      <div class=" mx-auto mb-3">
+        <div *ngFor="let row of seatArray" class="seat-row mt-3">
+          <div *ngFor="let col of row" class="cols">
+            <div class="seat text-center" (click)="toggleSeatSelection(col)"
+              [class.selected]="col.seatStatus==='Selected'" [class.sold]="col.seatStatus==='Booked'">
+              <p class="seatNumber">{{col.seatNumber}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mb-3">
+      <button mat-raised-button type="submit" (click)="bookTickets()" class="text-center" color="primary">Book Tickets</button>
+    </div>
+
+  </div>
+
+</div>

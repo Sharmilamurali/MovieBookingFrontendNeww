@@ -1,0 +1,31 @@
+<div class="container mt-3">
+  <div class=" text-center">
+    <h1 class="heading"><b>My Tickets
+        </b></h1>
+      </div>
+  <p>{{errorMessage}}</p>
+  <table mat-table [dataSource]="myTickets"  class="mat-elevation-z8">
+
+    <ng-container matColumnDef="movieName">
+      <th *matHeaderCellDef> Movie Name </th>
+      <td *matCellDef="let movie"> {{movie.movieName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="theatreName">
+      <th *matHeaderCellDef> Theator Name </th>
+      <td *matCellDef="let movie"> {{movie.theatreName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="noOfTicket">
+      <th *matHeaderCellDef> No. of tickests </th>
+      <td *matCellDef="let movie"> {{movie.noOfTickets}} </td>
+    </ng-container>
+    <ng-container matColumnDef="seatNumber">
+      <th *matHeaderCellDef> Seat number </th>
+      <td *matCellDef="let movie"><pre class="seats" *ngFor="let s of movie.seats">{{s.seatNumber}},</pre></td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+
+</div>

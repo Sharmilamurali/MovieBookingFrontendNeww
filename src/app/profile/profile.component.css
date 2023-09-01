@@ -1,0 +1,23 @@
+.profile{
+    border-radius: 5px;
+    border: 1px solid lightgrey;
+}
+
+.ml-2{
+    color:cadetblue;
+        margin-left: auto;
+        text-align: center;
+        font-weight: 500;
+}
+.header-class{
+   
+    font-style:normal;
+    font-size:xx-large;
+    
+    color: rgb(18, 10, 71);
+
+}
+.values{
+    font-size: large;
+    font-family: Geneva;
+}

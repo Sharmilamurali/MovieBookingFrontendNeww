@@ -1,0 +1,18 @@
+<mat-toolbar class="headerclass">
+
+
+    <a routerLink="/" class="heading">Book Movie Ticket</a>
+
+    <span class="example-spacer"></span>
+
+    <button mat-icon-button *ngIf="isLoggedin()" [matMenuTriggerFor]="belowMenu">
+    <mat-icon class="rounded" style="color: white;">person</mat-icon></button>
+    <mat-menu #belowMenu="matMenu" yPosition="below">
+        <button mat-menu-item routerLink="/profile">Profile</button>
+        <button mat-menu-item routerLink="/my-tickets">My Tickets</button>
+        <!-- <button mat-menu-item *ngIf="CheckIfAdmin()" routerLink="/admin">Admin Dashboard</button> -->
+        <!-- <button mat-menu-item *ngIf="CheckIfAdmin()" routerLink="/addMovie">Add a Movie</button> -->
+        <button mat-menu-item (click)="logout()">Logout</button>
+    </mat-menu>
+
+</mat-toolbar>

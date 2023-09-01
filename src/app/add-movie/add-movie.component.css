@@ -1,0 +1,12 @@
+.movieAddForm{
+    width: 50%;
+}
+
+h1{
+    font-family:Arial, Helvetica, sans-serif; 
+    color: rgb(13,7, 51);
+    
+}
+.error{
+    color: red;
+}
