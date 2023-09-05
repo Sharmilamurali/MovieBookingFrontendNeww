@@ -9,7 +9,7 @@ import movieId from '../model/movieId';
 })
 export class ApiServiceService {
 
-  PATH_OF_API = "http://localhost:8081";
+  PATH_OF_API = "https://backendapplicationnew.azurewebsites.net";
 
   constructor(
     private http: HttpClient
